@@ -87,6 +87,10 @@ public class GameController : MonoBehaviour
             }
         }
 
+        CheckWin();
+    }
+
+    private void CheckWin(){
         if (playerOrder.Count == 5)
         {
             for (int i = 0; i < correctOrder.Count; i++)
@@ -96,6 +100,7 @@ public class GameController : MonoBehaviour
                     //equal = true;
                     //Do GG IZI
                     Debug.Log("Ganaste");
+                    WinGame();
 
 
                 }
@@ -104,15 +109,21 @@ public class GameController : MonoBehaviour
                     //equal = false;
                     //Do Game Over
                     Debug.Log("Loser");
+                    LoseGame();
 
                 }
             }
         }
     }
 
-    private void EndGame()
+
+    private void LoseGame()
     {
         Debug.Log("Game Over");
+    }
+    
+    private void WinGame(){
+        Debug.Log("Victory");
     }
 
 
